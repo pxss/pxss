@@ -25,7 +25,7 @@ $referrer=htmlspecialchars(addslashes($_POST['referrer']));
 $browser = htmlspecialchars(addslashes($_POST['browser']));//浏览器： 
 $ip =base64_encode(htmlspecialchars(addslashes(getIP())));//IP地址： 
 $os = htmlspecialchars(addslashes($_POST['os']));//操作系统：
-$language=lang();//浏览器语言
+$language=htmlspecialchars(addslashes(lang()));//浏览器语言
 $time = date('Y-m-d H:i:s', time());
 $project=mysql_query("SELECT * FROM `pxss_project` WHERE `project_domain`='{$domain}' AND `project_ip`='{$ip}'");
 $mail=mysql_query("SELECT * FROM `pxss_userinfo` WHERE `id`=1");
